@@ -1,5 +1,4 @@
 import streamlit as st
-import streamlit_authenticator as stauth
 import json
 import hashlib
 from pathlib import Path

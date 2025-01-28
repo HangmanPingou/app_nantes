@@ -5,11 +5,11 @@ import requests
 from streamlit_folium import st_folium
 from pathlib import Path
 
-headers = {
+headers = {   # Pour se connecter à l'API openstreetmap.
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0',
     'Referer': 'https://www.example.com'
 }
-def API_address(postal_address):
+def API_address(postal_address):   # Fonction qui récupère les coordonnées GPS à partir de l'adresse en intérogeant l'API.
     link_main = 'https://nominatim.openstreetmap.org/?q='
     address = postal_address
     link_end = '&format=json&limit=1'
@@ -31,7 +31,7 @@ liste_addresses = [adresse for adresse in df.adresse]
 
 m = folium.Map((47.219940, -1.573184), zoom_start = 12)
 
-for coord, lieux, adresse in zip(liste_coor, liste_lieux, liste_addresses):
+for coord, lieux, adresse in zip(liste_coor, liste_lieux, liste_addresses):   # Ajout des marqueurs pour chaque défibrilateurs.
     marker = folium.Marker(coord, popup= f"{lieux} / {adresse}", icon=folium.Icon(color='green'))
     marker.add_to(m)
 
