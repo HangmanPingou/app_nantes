@@ -25,7 +25,7 @@ def tri_liste(liste, indice, valeur): # Fonction de trie pour intégrer une vale
     liste[indice] = valeur
     return liste
 
-st.title("Carte des défibrilateurs.")
+st.title(":red[Carte des défibrilateurs.]")
 
 add = Path.cwd()/"data"
 
@@ -35,10 +35,10 @@ liste_coor = [dict(eval(coor)).get("geometry").get("coordinates")[::-1] for coor
 liste_lieux = [lieux for lieux in df.designation]           # Création des différentes listes par rapport au fichier.
 liste_addresses = [adresse for adresse in df.adresse]
 
-m = folium.Map((47.219940, -1.573184), zoom_start = 12)  # Initialisation de la carte.
+m = folium.Map(zoom_start = 12)  # Initialisation de la carte.
 
 for coord, lieux, adresse in zip(liste_coor, liste_lieux, liste_addresses):   # Ajout des marqueurs pour chaque défibrilateur.
-    marker = folium.Marker(coord, popup= f"{lieux} / {adresse}", icon=folium.Icon(color='green'))
+    marker = folium.Marker(coord, popup= f"{lieux} / {adresse}", icon=folium.Icon(color="green"))
     marker.add_to(m)
 
 if "markers" not in st.session_state:  # Liste des marqueurs à rajouter, la liste étant créée dans la session.
@@ -48,10 +48,13 @@ if "marker2" in st.session_state:  # Permet de gérer le marqueur "VOUS ETES ICI
     marker2 = st.session_state.marker2
     marker2.add_to(m)
 
+if "coordonnees" not in st.session_state:  # La liste pour le centrage automatique de la carte.
+    st.session_state.coordonnees = liste_coor
+
 for indice in st.session_state.markers:  # Ajouts des marqueurs présent dans la liste de la session.
     folium.Marker(liste_coor[indice], popup= f"{liste_lieux[indice]} / {liste_addresses[indice]}").add_to(m)
 
-here = st.text_input("Indiquez l'adresse où vous êtes.")
+here = st.text_input(":blue[Indiquez l'adresse où vous êtes.]")
 
 if st.button("Se localiser."):
     coor_here = API_address(here)  # Utilise la fonction pour récupérer les coordonnées GPS à partir de l'adresse entrée dans le champ.
@@ -67,7 +70,12 @@ if st.button("Se localiser."):
                 liste_proche = tri_liste(liste_proche, indice, valeur)
                 break
     liste_indice = [liste_proche[indice][1] for indice in range(len(liste_proche))]
+    st.session_state.markers = []
+    st.session_state.coordonnees = []
     for indice in liste_indice:  # Ajoute à la liste de la session les indices des 5 plus proches.
         st.session_state.markers.append(indice)
+        st.session_state.coordonnees.append(liste_coor[indice])
 
+m.fit_bounds(st.session_state.coordonnees)
 st_folium(m, width=725)
+

@@ -8,11 +8,11 @@ from pathlib import Path
 def hash_password(password): # Fonction pour le hachage du mot de passe avant de l'enregistrer dans le fichier json.
     return hashlib.sha256(password.encode()).hexdigest()
 
-st.title("INSCRIPTION", )
-new_username = st.text_input("Choisir un nom d'utilisateur.")
-new_password = st.text_input("Choisir un mot de passe : \n\nDoit comporter au moins 8 caractères, une majuscule, une minuscule, un caractère spécial et un chiffre.", type="password")
-confirm_password = st.text_input("Confirmer le mot de passe.", type="password")
-new_age = st.date_input("Entrer votre date de naissance : \n\nInformation non enregistrée. Vous devez être majeure.", format="YYYY/MM/DD", min_value=date(year=1900, month=1, day=1), max_value=date(year=2025, month=2, day=28)) # Vérifie la majorité.
+st.title(":rainbow[INSCRIPTION]", )
+new_username = st.text_input(":orange[Choisir un nom d'utilisateur.]")
+new_password = st.text_input(":orange[Choisir un mot de passe :] \n\n :red[Doit comporter au moins 8 caractères, une majuscule, une minuscule, un caractère spécial et un chiffre.]", type="password")
+confirm_password = st.text_input(":orange[Confirmer le mot de passe.]", type="password")
+new_age = st.date_input(":orange[Entrer votre date de naissance :] \n\n :red[Information non enregistrée. Vous devez être majeure.]", format="YYYY/MM/DD", min_value=date(year=1900, month=1, day=1), max_value=date(year=2025, month=2, day=28)) # Vérifie la majorité.
 
 add = Path.cwd()/"data"
 

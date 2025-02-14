@@ -1,0 +1,58 @@
+Théatre	1422
+Exposition	811
+Musique	486
+Exposition, Evasion	432
+Rencontre	238
+Musique, Théatre	142
+Sport	89
+Spectacle	83
+Exposition, Evasion, Rencontre	61
+Audiovisuel	58
+Divers	44
+Spectacle, Théatre	39
+Spectacle, Musique	38
+Fête	37
+Littérature	37
+Exposition, Evasion, Audiovisuel	36
+Audiovisuel, Fête	35
+Spectacle, Musique, Théatre	33
+Exposition, Evasion, Jeux	26
+Exposition, Rencontre, Audiovisuel	24
+Exposition, Rencontre	15
+Musique, Rencontre	13
+Musique, Audiovisuel	13
+Jeux	12
+Musique, Littérature	11
+Théatre, Rencontre	9
+Rencontre, Audiovisuel	7
+Théatre, Exposition, Rencontre, Littérature, Audiovisuel	6
+Exposition, Evasion, Rencontre, Littérature, Jeux	6
+Musique, Théatre, Littérature	6
+Exposition, Evasion, Littérature	5
+Rencontre, Littérature, Fête	4
+Spectacle, Rencontre, Jeux	4
+Théatre, Fête	3
+Evasion, Rencontre	3
+Spectacle, Musique, Théatre, Littérature, Fête	3
+Spectacle, Rencontre	3
+Rencontre, Sport	3
+Musique, Théatre, Audiovisuel	3
+Spectacle, Musique, Fête	2
+Spectacle, Jeux	2
+Littérature, Fête	2
+Rencontre, Littérature	2
+Spectacle, Littérature	2
+Spectacle, Musique, Littérature	2
+Musique, Fête	2
+Spectacle, Musique, Rencontre	2
+Evasion, Rencontre, Economie circulaire	2
+Musique, Evasion, Rencontre, Economie circulaire, Fête	2
+Musique, Exposition, Evasion	2
+Spectacle, Musique, Exposition, Rencontre, Audiovisuel	1
+Spectacle, Musique, Exposition, Rencontre	1
+Littérature, Jeux	1
+Spectacle, Musique, Jeux	1
+Spectacle, Musique, Théatre, Rencontre	1
+Rencontre, Fête	1
+Evasion, Economie circulaire	1
+Rencontre, Jeux	1
